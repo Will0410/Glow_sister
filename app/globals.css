@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #100d0c;
+  --foreground: #f6f1ea;
+
+  /* Dark luxury base */
+  --glow-bg: #100d0c;
+  --glow-surface: #1a1614;
+  --glow-surface-2: #221c19;
+  --glow-line: rgba(246, 241, 234, 0.12);
+  --glow-ink: #f6f1ea;
+  --glow-ink-soft: #b6ab9f;
+
+  /* Gold, for the luxury half */
+  --glow-gold: #d9b877;
+  --glow-gold-light: #ecdcae;
+
+  /* Vibrant sunset gradient, for the modern half */
+  --glow-accent-from: #ff3f8b;
+  --glow-accent-to: #ffab3d;
+
+  --glow-blush: #2a1d20;
+  --glow-rose: #ff3f8b;
+  --glow-rose-deep: #ff6f9c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-glow-bg: var(--glow-bg);
+  --color-glow-surface: var(--glow-surface);
+  --color-glow-surface-2: var(--glow-surface-2);
+  --color-glow-ink: var(--glow-ink);
+  --color-glow-ink-soft: var(--glow-ink-soft);
+  --color-glow-line: var(--glow-line);
+  --color-glow-blush: var(--glow-blush);
+  --color-glow-rose: var(--glow-rose);
+  --color-glow-rose-deep: var(--glow-rose-deep);
+  --color-glow-gold: var(--glow-gold);
+  --color-glow-gold-light: var(--glow-gold-light);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--glow-accent-from);
+  color: #100d0c;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glow-gradient-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--glow-accent-from),
+    var(--glow-accent-to)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glow-gradient-bg {
+  background-image: linear-gradient(
+    100deg,
+    var(--glow-accent-from),
+    var(--glow-accent-to)
+  );
+}
+
+.glow-shadow {
+  box-shadow: 0 8px 30px -8px rgba(255, 63, 139, 0.45);
+}
