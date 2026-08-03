@@ -58,7 +58,7 @@ export default function CheckoutResult({ variant }: { variant: Variant }) {
       )}
       <Link
         href="/#catalogo"
-        className="glow-gradient-bg glow-shadow mt-4 rounded-full px-8 py-4 text-sm font-semibold text-glow-bg transition hover:brightness-110"
+        className="glow-gradient-bg glow-shadow mt-4 rounded-full px-8 py-4 text-sm font-semibold text-glow-on-accent transition hover:brightness-110"
       >
         Voltar ao catálogo
       </Link>

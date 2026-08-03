@@ -58,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
               e.stopPropagation();
               addItem(product);
             }}
-            className="glow-gradient-bg rounded-full px-4 py-2 text-xs font-semibold text-glow-bg transition hover:brightness-110"
+            className="glow-gradient-bg rounded-full px-4 py-2 text-xs font-semibold text-glow-on-accent transition hover:brightness-110"
           >
             Adicionar
           </button>

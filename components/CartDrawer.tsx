@@ -20,14 +20,9 @@ export default function CartDrawer({
   function handleCheckout() {
     setError(null);
     startTransition(async () => {
-      try {
-        await checkoutAction(items);
-      } catch (err) {
-        if (err instanceof Error && err.message) {
-          setError(err.message);
-        } else {
-          setError("Não foi possível iniciar o pagamento. Tente novamente.");
-        }
+      const result = await checkoutAction(items);
+      if (result?.error) {
+        setError(result.error);
       }
     });
   }
@@ -137,7 +132,7 @@ export default function CartDrawer({
           <button
             onClick={handleCheckout}
             disabled={items.length === 0 || isPending}
-            className="glow-gradient-bg w-full rounded-full py-3.5 text-sm font-semibold text-glow-bg transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+            className="glow-gradient-bg w-full rounded-full py-3.5 text-sm font-semibold text-glow-on-accent transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
           >
             {isPending ? "Redirecionando..." : "Finalizar compra"}
           </button>

@@ -42,7 +42,7 @@ export default function ProductGrid() {
               onClick={() => setActive(filter.value)}
               className={`rounded-full border px-5 py-2 text-sm font-medium transition ${
                 active === filter.value
-                  ? "glow-gradient-bg border-transparent text-glow-bg"
+                  ? "glow-gradient-bg border-transparent text-glow-on-accent"
                   : "border-glow-line text-glow-ink-soft hover:border-glow-gold/40 hover:text-glow-ink"
               }`}
             >

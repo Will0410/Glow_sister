@@ -20,7 +20,7 @@ export default function ProductDetailActions({ product }: { product: Product }) 
     <div className="flex flex-col gap-4">
       <button
         onClick={handleAdd}
-        className="glow-gradient-bg glow-shadow w-full rounded-full py-4 text-sm font-semibold text-glow-bg transition hover:brightness-110 sm:w-auto sm:px-10"
+        className="glow-gradient-bg glow-shadow w-full rounded-full py-4 text-sm font-semibold text-glow-on-accent transition hover:brightness-110 sm:w-auto sm:px-10"
       >
         {added ? "Adicionado ✓" : "Adicionar à sacola"}
       </button>

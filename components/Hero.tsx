@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="mt-2 flex flex-wrap items-center gap-4">
             <a
               href="#catalogo"
-              className="glow-gradient-bg glow-shadow rounded-full px-8 py-4 text-sm font-semibold text-glow-bg transition hover:brightness-110"
+              className="glow-gradient-bg glow-shadow rounded-full px-8 py-4 text-sm font-semibold text-glow-on-accent transition hover:brightness-110"
             >
               Ver catálogo
             </a>

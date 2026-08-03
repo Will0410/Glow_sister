@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --background: #100d0c;
-  --foreground: #f6f1ea;
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
 
   /* Dark luxury base */
   --glow-bg: #100d0c;
@@ -16,13 +16,38 @@
   --glow-gold: #d9b877;
   --glow-gold-light: #ecdcae;
 
-  /* Vibrant sunset gradient, for the modern half */
-  --glow-accent-from: #ff3f8b;
-  --glow-accent-to: #ffab3d;
-
   --glow-blush: #2a1d20;
   --glow-rose: #ff3f8b;
   --glow-rose-deep: #ff6f9c;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Light editorial base */
+  --glow-bg: #fbf9f6;
+  --glow-surface: #ffffff;
+  --glow-surface-2: #f3ede6;
+  --glow-line: rgba(28, 26, 25, 0.12);
+  --glow-ink: #1c1a19;
+  --glow-ink-soft: #6b625b;
+
+  --glow-gold: #ad8a51;
+  --glow-gold-light: #e2c48c;
+
+  --glow-blush: #f7e3e6;
+  --glow-rose: #c23768;
+  --glow-rose-deep: #8f2f47;
+}
+
+:root {
+  /* Vibrant sunset gradient + fixed dark text-on-accent, same in both themes */
+  --glow-accent-from: #ff3f8b;
+  --glow-accent-to: #ffab3d;
+  --glow-on-accent: #100d0c;
+
+  --background: var(--glow-bg);
+  --foreground: var(--glow-ink);
 }
 
 @theme inline {
@@ -39,6 +64,7 @@
   --color-glow-rose-deep: var(--glow-rose-deep);
   --color-glow-gold: var(--glow-gold);
   --color-glow-gold-light: var(--glow-gold-light);
+  --color-glow-on-accent: var(--glow-on-accent);
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
 }
@@ -46,6 +72,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
@@ -82,4 +109,15 @@ body {
 
 .glow-shadow {
   box-shadow: 0 8px 30px -8px rgba(255, 63, 139, 0.45);
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+  display: none;
+}
+[data-theme="dark"] .theme-icon-sun {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-moon {
+  display: inline;
 }
